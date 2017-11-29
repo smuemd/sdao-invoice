@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.css">
+
+  <style type="text/css">
+  html {
+height: 100%
+/*   box-sizing: border-box; */
+}
+
+/* *, *:before, *:after {
+box-sizing: inherit;
+} */
+
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+height: 100%;
+background: rgb(204,204,204);
+font-size: 10pt;
+line-height: 1.5;
+}
+
+page, main {
+background: white;
+display: block;
+margin: 0 auto;
+margin-bottom: 0.5cm;
+box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+
+page[size="A4"] {
+width: 21cm;
+min-height: 29.7cm;
+}
+page[size="A4"][layout="portrait"] {
+width: 29.7cm;
+min-height: 21cm;
+}
+page[size="A3"] {
+width: 29.7cm;
+min-height: 42cm;
+}
+page[size="A3"][layout="portrait"] {
+width: 42cm;
+min-height: 29.7cm;
+}
+page[size="A5"] {
+width: 14.8cm;
+min-height: 21cm;
+}
+page[size="A5"][layout="portrait"] {
+width: 21cm;
+min-height: 14.8cm;
+}
+
+main[size="A4"] {
+width: 21cm;
+min-height: 29.7cm;
+}
+
+main {
+/*   padding-left: 25mm;
+padding-right: 20mm; */
+}
+
+header {
+display: table;
+/*   width: 165mm; */
+width: 100%;
+height: 45mm;
+/*background-color: lightgrey;*/
+}
+
+header > * {
+display: table-cell;
+text-align: right;
+vertical-align: middle;
+padding-right: 50mm;
+/*   padding-right: 50mm; */
+}
+
+address {
+font-style: normal;
+}
+
+address#sender {
+/*background-color: pink;*/
+font-size: 7pt;
+line-height: 5mm;
+margin-left: 20mm;
+max-width: 80mm;
+padding-left: 5mm;
+white-space: nowrap;
+}
+
+table {
+width: 100%;
+text-align: left;
+}
+
+table#info-table {
+min-height: 45mm;
+border-spacing: 0;
+padding-left: 20mm;
+padding-right: 10mm;
+margin-bottom: 32px;
+}
+
+td#address-box {
+padding-bottom: 5mm;
+padding-left: 5mm;
+/*background-color: lightblue;*/
+width: 80mm;
+}
+
+#consignee {
+max-height: 40mm;
+/*background-color: pink;*/
+}
+
+td#info-block {
+font-size: 7pt;
+line-height: 10pt;
+width: 75mm;
+vertical-align: bottom;
+/*background-color: lightgreen;*/
+/*   height: 45mm; */
+}
+
+table[type='key-value-pairs'] {
+width: initial;
+border-spacing: 0;
+}
+
+table[type='key-value-pairs'] th,
+table[type='key-value-pairs'] td {
+font-weight: normal;
+vertical-align: top;
+}
+
+table[type='key-value-pairs'] td {
+padding-left: 1em;
+}
+
+
+section {
+margin-left: 25mm;
+margin-right: 20mm;
+}
+
+h1.title {
+font-size: 12pt;
+line-height: 15pt;
+font-weight: normal;
+Margin-top: 0px;
+margin-bottom: 22.5pt;
+}
+
+p {
+margin-top: 0;
+margin-bottom: 15pt
+}
+
+.bg1 {
+  background-image: url("pics/rechnungserlaeuterung_Page_1.jpg");
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+
+@media print {
+body, page {
+  margin: 0;
+  box-shadow: 0;
+}
+}
+  </style>
+</head>
+
+<body class="sans-serif">
+  <main size="A4">
+
+    <header h="45mm">
+      <h1 class="brand">stromdao</h1>
+    </header>
+
+    <address id="sender">
+      STROMDAO UG | Gerhard Weiser Ring 29, 69256 Mauer
+    </address>
+    <div class='InfoTable-wrapper'>
+      <table id="info-table">
+        <tbody class="group1">
+          <tr>
+            <td id="address-box">
+              <address id="consignee">
+                <div>
+                  {if company.name}
+                </div>
+                <div>
+                  <span>{firstName}</span>&nbsp;<span>{lastName}</span>
+                </div>
+                <div>
+                  <span>{A very long long streetname}</span>&nbsp;<span>{92982}</span>
+                </div>
+                 <div>
+                    <span>{zip}</span>&nbsp;<span>{city}</span>,
+                 </div>
+                  <div>
+                    {Country}
+                  </div>
+                </address>
+              </td>
+            <td></td>
+            <td id="info-block">
+              <table type="key-value-pairs">
+              <tbody class="group">
+                  <tr><th scope="row">Rechnungsnummer</th><td>9021849348</td></tr>
+                 <tr><th scope="row">Datum</th><td>30. September 1981</td></tr>
+                  <tr><th scope="row">Summe</th><td>€153,43</td></tr>
+               </tbody>
+                <tbody class="group">
+                  <tr>
+                    <th scope="row">Ansprechpartner</th>
+                    <td>
+                    <div>Stefan Thon</div>
+                    <div>stefan.thon@stromdao.com</div>
+                   </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <section>
+      <div class="date tr">
+        30.September. 1981
+      </div>
+      <h1 class='title'>
+        <div>
+          Autostrom
+        </div>
+        <div>
+          Rechnung&nbsp;<span>9021849348</span>
+        </div>
+      </h1>
+      <div>
+        <p>
+          Guten Tag Frau Musterfrau,
+        </p>
+        <p>vielen Dank für Ihr Vertrauen in die STROMDAO Autostrom. Aus Ihrem Verbrauch und den geleisteten Zahlungen ergibt sich folgende Rechnung zum genannten Abrechnungszeitraum. Alle Details finden Sie auf den folgenden Seiten.
+        </p>
+      </div>
+    </section>
+    <section>
+      <table>
+        <thead class="aural if not needed">
+          <tr>
+            <th scope="col">Produkt</th>
+            <th scope="col">Menge</th>
+            <th scope="col">Nettobetrag</th>
+            <th scope="col">Umsatzsteuer</th>
+            <th scope="col">Bruttobetrag</th>
+          </tr>
+        </thead>
+        <tbody class="group" >
+            <tr>
+              <td scope="row">Autostrom</td>
+              <td>200 kWh</td>
+              <td>€100,43</td>
+              <td>€53,43</td>
+              <td>€153,43</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ccc;">
+              <td scope="row">Autostrom</td>
+              <td>200 kWh</td>
+              <td>€100,43</td>
+              <td>€53,43</td>
+              <td>€153,43</td>
+          </tr>
+        </tbody>
+        <tbody class="group">
+            <tr>
+              <td scope="row">Lokalstromvorteil</td>
+              <td></td>
+              <td>€100,43</td>
+              <td>€53,43</td>
+              <td>€153,43</td>
+          </tr>
+        </tbody>
+    </table>
+
+    </section>
+  </main>
+  <page size="A4" class="bg1">
+  </page>
+</body>
+</html>
